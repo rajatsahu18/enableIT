@@ -1,8 +1,10 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../hooks';
-import { RootState } from '../redux/store';
-import { fetchUsers } from '../redux/userAction';
-import { setPage } from '../redux/userSlice';
+import {MdArrowBackIosNew, MdArrowForwardIos} from "react-icons/md";
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { RootState } from '../../redux/store';
+import { fetchUsers } from '../../redux/userAction';
+import { setPage } from '../../redux/userSlice';
+import "./Users.css";
 
 
 const Users: React.FC = () => {
@@ -22,10 +24,12 @@ const Users: React.FC = () => {
         dispatch(setPage(page + 1))
     }
 
-    return (
+    return loading ? (
+        <p>Loading users...</p>
+    ) : error ? (
+        <p>Error: {error} </p>
+    ) : (
         <div>
-            {loading && <p>Loading users...</p> }
-            {error && <p>Error: {error} </p> }
             <table>
                 <thead>
                     <tr>
@@ -36,7 +40,7 @@ const Users: React.FC = () => {
                         <th>Company</th>
                     </tr>
                 </thead>
-            <tbody>
+                <tbody>
                 {users.length > 0 && users?.map((user) => (
                     <tr key={user.ID} >
                         <td>{user.FirstNameLastName}</td>
@@ -46,10 +50,13 @@ const Users: React.FC = () => {
                         <td>{user.Company}</td>
                     </tr>
                 ))}
-            </tbody>
+                </tbody>
             </table>
-            <button onClick={handlePrevPage} disabled={page === 0} >Prev</button>
-            <button onClick={handleNextPage}>Next</button>
+            <div className='button-wrap'>
+                <button onClick={handlePrevPage} disabled={page === 0} ><MdArrowBackIosNew size={20} /></button>
+                <h2>{page + 1}</h2>
+                <button onClick={handleNextPage}><MdArrowForwardIos size={20} /></button>
+            </div>
         </div>
     )
 }
