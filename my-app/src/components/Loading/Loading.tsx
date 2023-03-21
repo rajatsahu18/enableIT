@@ -3,12 +3,11 @@ import "./Loading.css";
 
 const Loading = () => {
     return (
-        <div className="main">
-            <div className="spinner">
-                <div className="bubble-1"></div>
-                <div className="bubble-2"></div>
-                <div className="bubble-3"></div>
-            </div>
+        <div className="container">
+            <div className="ring"></div>
+            <div className="ring"></div>
+            <div className="ring"></div>
+            <span className='loading'>Loading...</span>
         </div>
     )
 }

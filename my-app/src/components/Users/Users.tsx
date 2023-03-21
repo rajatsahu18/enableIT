@@ -2,8 +2,9 @@ import React from 'react';
 import {MdArrowBackIosNew, MdArrowForwardIos} from "react-icons/md";
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { RootState } from '../../redux/store';
-import { fetchUsers } from '../../redux/userAction';
-import { setPage } from '../../redux/userSlice';
+import { fetchUsers } from '../../redux/user/userAction';
+import { setPage } from '../../redux/user/userSlice';
+import ErrorPage from '../Error/ErrorPage';
 import Loading from '../Loading/Loading';
 import "./Users.css";
 
@@ -11,7 +12,6 @@ import "./Users.css";
 const Users: React.FC = () => {
     const dispatch = useAppDispatch();
     const { users, loading, error, page } = useAppSelector((state: RootState) => state.users)
-    console.log(users)
 
     React.useEffect(() => {
         dispatch(fetchUsers(page))
@@ -28,7 +28,7 @@ const Users: React.FC = () => {
     return loading ? (
         <Loading />
     ) : error ? (
-        <p>Error: {error} </p>
+        <ErrorPage/>
     ) : (
         <div>
             <table>

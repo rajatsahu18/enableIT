@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import './Navbar.css';
@@ -9,7 +9,7 @@ const Navbar = () => {
 
     return (
         <nav className='navbar'>
-            <h3 className='logo' >Brand</h3>
+            <h3 className='logo'><Link to='/'>EnableIT</Link></h3>
             
             <ul className= {isMobile ? "nav-links-mobile" : "nav-links" } onClick={() => setIsMobile(false)}>
                 <Link to='/' className='users'><li>Users</li></Link>

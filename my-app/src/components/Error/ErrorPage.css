@@ -1,0 +1,50 @@
+.container {
+    overflow: hidden;
+    color: #5F259F;
+    text-align: center;
+}
+
+.container h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+}
+
+.container h1 div {
+    animation: animate1 2s linear infinite alternate;
+}
+
+.container h1 .num {
+    animation: animate2 2s linear infinite alternate;
+}
+
+p {
+    margin-top: -3rem;
+}
+
+@keyframes animate1 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        opacity: 0.1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        top: 20%;
+        opacity: 1;
+    }
+}
