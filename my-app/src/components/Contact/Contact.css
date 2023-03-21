@@ -1,0 +1,11 @@
+.contact-container ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contact-container ul a {
+    text-decoration: none;
+    color: #00828C;
+}
