@@ -15,11 +15,10 @@ td, th {
 
 th {
     text-align: left;
-    background-color: #00828c;
+    background-color: #5F259F;
     color: #fff;
     text-transform: uppercase;
     padding: 1rem;
-    border-bottom: 2px solid rgb(50, 50, 100);
     border-top: none;
 }
 
@@ -51,7 +50,7 @@ td:last-of-type, th:last-of-type {
 }
 
 button {
-    background-color: #00828c;
+    background-color: #5F259F;
     color: #fff;
     border: none;
     outline: none;

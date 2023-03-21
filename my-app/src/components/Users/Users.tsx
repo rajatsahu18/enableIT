@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks';
 import { RootState } from '../../redux/store';
 import { fetchUsers } from '../../redux/userAction';
 import { setPage } from '../../redux/userSlice';
+import Loading from '../Loading/Loading';
 import "./Users.css";
 
 
@@ -25,7 +26,7 @@ const Users: React.FC = () => {
     }
 
     return loading ? (
-        <p>Loading users...</p>
+        <Loading />
     ) : error ? (
         <p>Error: {error} </p>
     ) : (
